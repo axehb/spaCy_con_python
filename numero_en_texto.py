@@ -13,6 +13,7 @@ nlp = spacy.load("en_core_web_sm")
 # Initialize the matcher with the shared vocab
 matcher = Matcher(nlp.vocab)
 
+#Colocamos el texto que verificaremos
 text = "After making the iOS update you won't notice a radical system-wide "
     "redesign: nothing like the aesthetic upheaval we got with iOS 7. Most of "
     "iOS 11s furniture remains the same as in iOS 10. But you will discover "
@@ -24,7 +25,7 @@ doc = nlp(text)
 
 # Call the matcher on the doc
 matches = matcher(doc)
-
+#Si la lista esta vacia
 if not(matches):
   print("El texto debe contener al menos 1 número")
 else:
